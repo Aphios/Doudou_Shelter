@@ -32,12 +32,12 @@ An exemple of resource :
 VERBS
 
 GET/doudous : returns all doudous
-GET/doudous?p=x : returns page X, containing 10 doudous
-GET/doudous?id=x : returns the doudou of id x
-GET/doudous?name=x : returns the doudou of name x
-GET/doudous?age=x : returns all doudous of age x
-GET/doudous?species=x : returns all doudous of species x
-GET/doudous?sex=x : returns all doudous of sex x
-GET/doudous?softness=x : returns all doudous of softness x
+GET/doudous/page/x : returns page X, containing 10 doudous
+GET/doudous/id/x : returns the doudou of id x
+GET/doudous/name/x : returns the doudou of name x
+GET/doudous/age/x : returns all doudous of age x
+GET/doudous/species/x : returns all doudous of species x
+GET/doudous/sex/x : returns all doudous of sex x
+GET/doudous/softness/x : returns all doudous of softness x
 POST/doudous : adds a doudou and sends confirmation message
 PUT/doudous : updates a doudou based on the id in the request, and sends confirmation message
