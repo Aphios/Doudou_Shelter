@@ -8,6 +8,4 @@ const doudouSchema = mongoose.Schema({
     softness: { type: Number, required: true },
   });
    
-const DoudouModel = mongoose.model("Doudou", doudouSchema)
-
-module.exports = { DoudouModel }
+module.exports = mongoose.model("Doudou", doudouSchema);

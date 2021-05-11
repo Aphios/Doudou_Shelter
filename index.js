@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
 require('./models/dbConnect')
 const routes = require('./routes/doudouRoutes');
 
-app.use('/doudous', routes)
+app.use(cors());
 
+app.use(express.json());
 
+app.use('/doudous', routes);
 
-app.listen(8080, ()=>{console.log("Server started on 8080")})
+app.listen(8080, () => {console.log("Server started on 8080")});

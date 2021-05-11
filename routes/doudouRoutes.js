@@ -1,82 +1,25 @@
 const express = require('express');
-const router = express.Router();
-const { DoudouModel } = require('../models/doudouModel');
+const router = express.Router()
+const controller = require('../controllers/doudouController')
 
-router.get('/', (req, res) => {
-    DoudouModel.find({}, (err, docs) => {
-        if(err)
-          console.log(err)
-        else
-          console.log(docs)
-    })
-})
+router.get('/', controller.getAllDoudous);
 
-router.get('/name/:name', (req, res) => {
-    DoudouModel.findOne({name: req.params.name}, (err, doc) => {
-      if(err)
-        console.log(err)
-      else
-        console.log(doc)
-    })
-})
+router.post('/', controller.createDoudou);
 
-router.get('/id/:id', (req, res) => {
-    DoudouModel.findOne({_id: req.params.id}, (err, doc) => {
-      if(err)
-        console.log(err)
-      else
-        console.log(doc)
-    })
-})
+router.put('/:id', controller.modifyDoudou);
 
-router.get('/age/:age', (req, res) => {
-    DoudouModel.find({age: req.params.age}, (err, doc) => {
-      if(err)
-        console.log(err)
-      else
-        console.log(doc)
-    })
-})
+router.get('/name/:name', controller.getDoudouByName);
 
-router.get('/sex/:sex', (req, res) => {
-    DoudouModel.find({sex: req.params.sex}, (err, doc) => {
-      if(err)
-        console.log(err)
-      else
-        console.log(doc)
-    })
-})
+router.get('/id/:id', controller.getDoudouById);
 
-router.get('/species/:species', (req, res) => {
-    DoudouModel.find({species: req.params.species}, (err, doc) => {
-      if(err)
-        console.log(err)
-      else
-        console.log(doc)
-    })
-})
+router.get('/age/:age', controller.getDoudousByAge);
 
-router.get('/softness/:softness', (req, res) => {
-    DoudouModel.find({softness: req.params.softness}, (err, doc) => {
-      if(err)
-        console.log(err)
-      else
-        console.log(doc)
-    })
-})
+router.get('/sex/:sex', controller.getDoudousBySex);
 
-router.get('/page/:page', (req, res) => {
-    DoudouModel.find({}, (err, doc) => {
-    // TODO pagination
-    })
-})
+router.get('/species/:species', controller.getDoudousBySpecies);
 
-router.post('/', (req, res) => {
-    // TODO
-})
+router.get('/softness/:softness', controller.getDoudousBySoftness);
 
-router.put('/', (req, res) => {
-    // TODO
-})
+router.get('/page/:page', controller.getDoudousByPage);
 
-module.exports = router
+module.exports = router;
