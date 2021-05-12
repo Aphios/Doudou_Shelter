@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const mongoose = require('mongoose');
+
+mongoose.set('useFindAndModify', false);
 
 require('./models/dbConnect')
 const routes = require('./routes/doudouRoutes');

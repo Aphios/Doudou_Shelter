@@ -8,7 +8,7 @@ router.post('/', controller.createDoudou);
 
 router.put('/:id', controller.modifyDoudou);
 
-router.get('/name/:name', controller.getDoudouByName);
+router.get('/name/:name', controller.getDoudousByName);
 
 router.get('/id/:id', controller.getDoudouById);
 
