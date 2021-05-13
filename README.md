@@ -40,3 +40,4 @@ VERBS
 - GET/doudous/softness/x : returns all doudous of softness x
 - POST/doudous : adds a doudou and sends confirmation message
 - PUT/doudous/:id : updates a doudou and sends confirmation message
+- DELETE/doudous/:id : deletes a doudou of id x. This route is only available to application administrator
