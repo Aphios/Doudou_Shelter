@@ -1,3 +1,4 @@
 node_modules/
 package-lock.json
 /models/dbConnect.js
+/controlles/authController.js
