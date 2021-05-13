@@ -1,14 +1,22 @@
-doudou-api v1.0
+Doudou Shelter
 ----------------
 
-doudou-api is a REST API providing data about soft toys.
-("doudou" means "soft toy companion" in french)
+Doudou Shelter provides a home for "doudous" ("soft toy companions" in french).
+At Doudou Shelter, anyone can adopt a doudou or give one so that it can be later adopted.
+This is a fictional service, meaning you only give or adopt some doudou data and not real stuffed toys.
 
-It's intendend as a fun student project.
+Doudou Shelter is a small website I built for learning purposes.
+It uses React.js for the frontend and Node/Express.js for the backend which contains a MongoDb-based API.
+
+---------------------
+API Documentation
+---------------------
+
+The Doudou Shelter API is a REST API providing data about soft toys.
 It could be useful to anyone who needs to access to a free API.
 I could also be useful to anyone needing inspiration to name their soft toys !
 
---------------------------
+-----------------------
 DATA :
 
 An exemple of resource :
