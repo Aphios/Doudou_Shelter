@@ -32,7 +32,6 @@ An exemple of resource :
 VERBS
 
 - GET/doudous : returns all doudous
-- GET/doudous/page/x : returns page X, containing 10 doudous
 - GET/doudous/id/x : returns the doudou of id x
 - GET/doudous/name/x : returns all doudous of name x
 - GET/doudous/age/x : returns all doudous of age x

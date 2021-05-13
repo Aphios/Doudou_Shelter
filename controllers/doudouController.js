@@ -114,15 +114,14 @@ exports.getDoudousBySoftness = (req, res) => {
     });
 }
 
-exports.getDoudousByPage = (req, res) => {
-    Doudou.find({}, (err, docs) => {
-        if (err) {
+exports.deleteDoudou = (req, res) => {
+    Doudou.findByIdAndDelete(req.params.id, (err, doc) => {
+        if(err){
             res.status(400).send("Nous avons rencontré une erreur : " + err);
-        }else if(docs.length == 0){
-            res.status(404).send("Il n'y a aucun doudou dans le catalogue.");
-        } else {
-            // TODO pagination
-            res.status(200).send(docs);
+        }else if(doc == null){
+            res.status(404).send("Identifiant non trouvé");
+        }else{
+            res.status(200).send("Doudou supprimé");
         }
     });
 };

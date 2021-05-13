@@ -1,6 +1,7 @@
 const express = require('express');
-const router = express.Router()
-const controller = require('../controllers/doudouController')
+const router = express.Router();
+const controller = require('../controllers/doudouController');
+const authController = require('../controllers/authController');
 
 router.get('/', controller.getAllDoudous);
 
@@ -20,6 +21,6 @@ router.get('/species/:species', controller.getDoudousBySpecies);
 
 router.get('/softness/:softness', controller.getDoudousBySoftness);
 
-router.get('/page/:page', controller.getDoudousByPage);
+router.delete('/:id', authController.isAuthenticated, controller.deleteDoudou);
 
 module.exports = router;
