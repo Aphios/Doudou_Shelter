@@ -1,5 +1,5 @@
 {
-  "name": "doudou-api",
+  "name": "doudou-shelter-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aphios/doudou-api.git"
+    "url": "git+https://github.com/Aphios/Doudou_Shelter.git"
   },
   "author": "Aphios",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Aphios/doudou-api/issues"
+    "url": "https://github.com/Aphios/Doudou_Shelter/issues"
   },
-  "homepage": "https://github.com/Aphios/doudou-api#readme",
+  "homepage": "https://github.com/Aphios/Doudou_Shelter#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
