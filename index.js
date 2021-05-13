@@ -12,6 +12,6 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/doudous', routes);
+app.use('/api/doudous', routes);
 
 app.listen(8080, () => {console.log("Server started on 8080")});

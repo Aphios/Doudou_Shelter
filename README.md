@@ -39,13 +39,13 @@ An exemple of resource :
 ---------------------
 VERBS
 
-- GET/doudous : returns all doudous
-- GET/doudous/id/x : returns the doudou of id x
-- GET/doudous/name/x : returns all doudous of name x
-- GET/doudous/age/x : returns all doudous of age x
-- GET/doudous/species/x : returns all doudous of species x
-- GET/doudous/sex/x : returns all doudous of sex x
-- GET/doudous/softness/x : returns all doudous of softness x
-- POST/doudous : adds a doudou and sends confirmation message
-- PUT/doudous/:id : updates a doudou and sends confirmation message
-- DELETE/doudous/:id : deletes a doudou of id x. This route is only available to application administrator
+- GET/api/doudous : returns all doudous
+- GET/api/doudous/id/x : returns the doudou of id x
+- GET/api/doudous/name/x : returns all doudous of name x
+- GET/api/doudous/age/x : returns all doudous of age x
+- GET/api/doudous/species/x : returns all doudous of species x
+- GET/api/doudous/sex/x : returns all doudous of sex x
+- GET/api/doudous/softness/x : returns all doudous of softness x
+- POST/api/doudous : adds a doudou and sends confirmation message
+- PUT/api/doudous/:id : updates a doudou and sends confirmation message
+- DELETE/api/doudous/:id : deletes a doudou of id x. This route is only available to application administrator
