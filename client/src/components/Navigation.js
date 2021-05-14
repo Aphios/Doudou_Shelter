@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 
 const Navigation = () => {
     return (
-        <div className="navigation">
+        <div className="navigation centered">
             <button className="btn btn-adopt">
                 <NavLink exact to="/adopt">
                   Adopt
