@@ -5,7 +5,10 @@ const Banner = () => {
     return (
         <div className="banner">
             <h1>The Doudou Shelter</h1>
-            <NavLink exact to="/">Home</NavLink>
+            <div className="home-link">
+                <img src="./img/logo_home.png" alt="Logo Home" />
+                <NavLink exact to="/">Home</NavLink>
+            </div>
         </div>
     );
 };

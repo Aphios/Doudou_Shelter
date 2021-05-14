@@ -1,0 +1,29 @@
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    padding: 2rem;
+
+    .btn{
+        transition: all .3s ease-in-out;   
+        color: white;
+        font-family: 'Montserrat', sans-serif;   
+        &:hover{
+          transform:translatey(10px);
+          box-shadow: none;
+        }
+        &:active{
+          opacity: 0.5;
+        }
+        &.btn-give{
+            @include createButton(150px, 60px, 50px,#83A1FB,#2878C8, rgba(60,135,211,0.5));
+        }
+        &.btn-adopt{
+            @include createButton(150px, 60px, 50px,#C766FF,#9530cf, rgba(219,87,219,0.5));
+        }
+
+    }
+
+}

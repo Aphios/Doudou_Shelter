@@ -6,12 +6,12 @@ const Navigation = () => {
         <div className="navigation">
             <button className="btn btn-adopt">
                 <NavLink exact to="/adopt">
-                  Adopter un doudou
+                  Adopt
                 </NavLink>
             </button>
             <button className="btn btn-give">
                 <NavLink exact to="/give">
-                  Donner un doudou
+                  Give
                 </NavLink>
             </button>
         </div>

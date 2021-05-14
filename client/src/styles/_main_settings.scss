@@ -1,0 +1,43 @@
+// Variables
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+$title-font: 'Dancing Script', cursive;
+$txt-font: 'Montserrat', sans-serif;
+
+// General
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: $txt-font;
+    color: #303030;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    &:visited{
+        color:white;
+    }
+}
+
+ul{
+    list-style-type: none;
+}
+
+// Mixins
+@mixin createButton($width, $height, $radius, $gradientFirst, $gradientThird, $shadowColor)
+  {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    background-image: linear-gradient( 135deg, $gradientFirst 0%, $gradientThird 100%);
+    box-shadow: 0 20px 30px -6px $shadowColor;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
