@@ -1,0 +1,21 @@
+.browse-filter{
+    display: flex;
+    ul{
+        display: flex;
+        li{
+            margin-right: 2rem;
+            transition: text-decoration .5s ease-out;
+            select{
+                margin-left: 0.5rem;
+            }
+            input{
+                margin-left: 0.5rem;
+            }
+            &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+    
+}

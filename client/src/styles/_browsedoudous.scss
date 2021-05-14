@@ -1,0 +1,12 @@
+.browse-doudous{
+    display: flex;
+    margin: 1rem;
+    border-top: 2px solid rgba(60,135,211,0.7);
+    padding-top: 1rem;
+    >section:nth-child(1){
+        width: 80%;
+    }
+    >section:nth-child(2){
+        width: 20%;
+    }
+}
