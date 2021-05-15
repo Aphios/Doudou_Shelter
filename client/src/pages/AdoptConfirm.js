@@ -12,7 +12,17 @@ const AdoptConfirm = () => {
                 <p>Your email will not be registered in any database or sold to whomever. We forget you right after sending you your doudous !</p>
             </Intro>
             {/* TODO show detailed cart here ?*/}
-            <div className="centered"></div>
+            <div className="give-form centered">
+                <form action="" method="post">
+                    <p>
+                        <label htmlFor="email">Your email</label>
+                        <input type="email" name="email" id="email" />
+                    </p>
+                    <button className="btn btn-adopt">
+                        Validate
+                    </button>
+                </form>
+            </div>
 
         </div>
     );

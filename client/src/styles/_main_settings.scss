@@ -4,6 +4,29 @@
 $title-font: 'Dancing Script', cursive;
 $txt-font: 'Montserrat', sans-serif;
 
+// Mixins
+@mixin createButton($width, $height, $radius, $gradientFirst, $gradientThird, $shadowColor)
+  {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    background-image: linear-gradient( 135deg, $gradientFirst 0%, $gradientThird 100%);
+    box-shadow: 0 20px 30px -6px $shadowColor;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.centered{
+    width: 60%;
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
 // General
 html{
     box-sizing: border-box;
@@ -30,25 +53,34 @@ ul{
     list-style-type: square;
 }
 
-// Mixins
-@mixin createButton($width, $height, $radius, $gradientFirst, $gradientThird, $shadowColor)
-  {
-    width: $width;
-    height: $height;
-    border-radius: $radius;
-    background-image: linear-gradient( 135deg, $gradientFirst 0%, $gradientThird 100%);
-    box-shadow: 0 20px 30px -6px $shadowColor;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: white;
+select{
+    margin-left: 0.5rem;
+}
+input{
+    margin-left: 0.5rem;
 }
 
-.centered{
-    width: 60%;
-    margin: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-align: center;
+.btn{
+    transition: all .3s ease-in-out;   
+    color: white;
+    font-family: 'Montserrat', sans-serif;   
+    &:hover{
+      transform:translatey(10px);
+      box-shadow: none;
+    }
+    &:active{
+      opacity: 0.5;
+    }
+    &.btn-give{
+        @include createButton(150px, 60px, 50px,#83A1FB,#2878C8, rgba(60,135,211,0.5));
+    }
+    &.btn-adopt{
+        @include createButton(150px, 60px, 50px,#C766FF,#9530cf, rgba(219,87,219,0.5));
+    }
+    &.btn-cart{
+        @include createButton(120px, 30px, 20px, #999999, #303030, rgba(38, 38, 38, 0.5));
+        font-size: 1rem;
+        margin: 0.6rem;
+    }
 }
+

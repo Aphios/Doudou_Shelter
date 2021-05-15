@@ -10,10 +10,11 @@ const Cart = () => {
             button close cart to close it
             button adopt leads to adopt-confirm page, appears only if there's sthg in cart
             */}
+            <img src="./img/logo_basket.png" alt="Basket icon" />
             <p>X doudous in your cart</p>
-            <button>Open cart</button>
-            <button>Close cart</button>
-            <button>
+            <button className="btn btn-cart">Open cart</button>
+            <button className="btn btn-cart">Close cart</button>
+            <button className="btn btn-cart">
                 <NavLink exact to="/adopt-confirm">Adopt</NavLink>
             </button>
         </div>
