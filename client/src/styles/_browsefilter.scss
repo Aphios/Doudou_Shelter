@@ -1,15 +1,9 @@
 .browse-filter{
     display: flex;
-    ul{
-        display: flex;
-        li{
-            margin-right: 2rem;
-            transition: text-decoration .5s ease-out;
-            &:hover{
-                text-decoration: underline;
-                cursor: pointer;
-            }
-        }
+    align-items: center;
+    select{
+        margin-left: 1rem;
+        font-family: 'Montserrat', sans-serif;
     }
     
 }

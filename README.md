@@ -44,6 +44,7 @@ VERBS
 - GET/api/doudous/name/x : returns all doudous of name x
 - GET/api/doudous/age/x : returns all doudous of age x
 - GET/api/doudous/species/x : returns all doudous of species x
+- GET/api/doudous/list/species : returns a list of all species
 - GET/api/doudous/sex/x : returns all doudous of sex x
 - GET/api/doudous/softness/x : returns all doudous of softness x
 - POST/api/doudous : adds a doudou and sends confirmation message

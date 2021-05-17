@@ -23,4 +23,6 @@ router.get('/softness/:softness', controller.getDoudousBySoftness);
 
 router.delete('/:id', authController.isAuthenticated, controller.deleteDoudou);
 
+router.get('/list/species', controller.getSpecies);
+
 module.exports = router;
