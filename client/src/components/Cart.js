@@ -3,14 +3,18 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import Doudou from './Doudou';
 
-const Cart = ({cart, setCart}) => {
+const Cart = ({cart, setCart, doudous, setDoudous}) => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const total = cart.length >= 1 ? cart.length : "No ";
+    const total = cart.length == 1 ? '1 doudou ' : cart.length > 1 ? (cart.length + " doudous ") : "No doudou ";
 
     function removeFromCart(elt){
-        let newCart = cart.filter(doudou => elt._id !== doudou._id)
+        let newCart = cart.filter(doudou => elt._id !== doudou._id);
+        if(newCart.length == 0){
+            setIsOpen(false);
+        }
         setCart(newCart);
+        setDoudous([...doudous, elt]);
     }
 
     return isOpen ? (
@@ -40,7 +44,7 @@ const Cart = ({cart, setCart}) => {
     ) : (
         <div className="cart">
             <img src="./img/logo_basket.png" alt="Basket icon" />
-            <p>{total} doudous in your cart</p>       
+            <p>{total}in your cart</p>       
             {cart.length > 0 ? (
                 <>
                 <button className="btn btn-cart" onClick={() => setIsOpen(true)}>Open cart</button>

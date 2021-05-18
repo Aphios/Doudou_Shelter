@@ -2,14 +2,11 @@ import React from 'react';
 import Doudou from './Doudou.js'
 
 
-const Doudous = ({doudous, cart, setCart}) => {
+const Doudous = ({doudous, setDoudous, cart, setCart}) => {
 
     function addToCart(elt){
-        // If the doudou is already in cart, it can't be added again
-        // This is a temporary solution, to be replaced with disabling doudou from purchase as soon as it is added to cart
-        if(cart.find(doudou => doudou._id === elt._id)){
-            return;
-        }
+        let newDoudous = doudous.filter(doudou => elt._id !== doudou._id);
+        setDoudous(newDoudous);
         if(cart.length > 0){
             setCart([...cart, elt]);
         }else{
