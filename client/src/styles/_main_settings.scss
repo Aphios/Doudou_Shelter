@@ -33,6 +33,7 @@ html{
     font-size: 16px;
     font-family: $txt-font;
     color: #303030;
+    padding-bottom :1rem;
 }
 
 body{
@@ -81,6 +82,16 @@ input{
         @include createButton(120px, 30px, 20px, #999999, #303030, rgba(38, 38, 38, 0.5));
         font-size: 1rem;
         margin: 0.6rem;
+    }
+    &.btn-shop{
+        @include createButton(100px, 20px, 10px, #C766FF,#9530cf, rgba(219,87,219,0.5));
+        font-size: 0.8rem;
+        margin: auto;
+    }
+    &.btn-delete{
+        @include createButton(100px, 20px, 10px, #999999, #a6a6a6, rgba(128, 128, 128, 0.5));
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
     }
 }
 

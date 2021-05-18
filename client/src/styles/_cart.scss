@@ -4,7 +4,17 @@
     background: #e5ccff;
     padding: 1.5rem;
     border-radius: 1rem;
-    position: fixed;
+    position: sticky;
     align-items: center;
     align-content: center;
+    &.cart-opened{
+        font-size: 0.8rem;
+        .doudou-presentation{
+            text-align: center;
+            ul{
+                padding: 0;
+                list-style-type: none;
+            }
+        }
+    }
 }

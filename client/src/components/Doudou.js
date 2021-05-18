@@ -1,17 +1,18 @@
 import React from 'react';
 
-const DoudouPresentation = (name, age, sex, species, softness) => {
+const Doudou = ({name, age, sex, species, softness}) => {
+
     return (
-        <div className="doudou-presentation">
+        <>
+            <p><strong>{name}</strong></p>
             <ul>
-                <li>Name : {name}</li>
                 <li>Age : {age}</li>
                 <li>Sex : {sex}</li>
                 <li>Species : {species}</li>
                 <li>Softness : {softness}</li>
             </ul>
-        </div>
+        </>
     );
 };
 
-export default DoudouPresentation;
+export default Doudou;
