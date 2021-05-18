@@ -19,17 +19,13 @@ const BrowseDoudous = () => {
 	}, [cart]);
     
     useEffect(() => {
-        axios.get('http://localhost:8080/api/doudous')
+        axios.get('/api/doudous')
         .then((response) => {
             if (response.status === 200 && response != null) {
                 setDoudous(response.data);
-                console.log(response.data);
-            }     
-        }).catch((error) => {
-            // TODO fallback
-            console.log(error);
-        });;
-    }, []);
+            }
+        });
+    }, []);     
 
     return (
         <div className="browse-doudous">
@@ -42,6 +38,6 @@ const BrowseDoudous = () => {
             </section>
         </div>
     );
-};
+}
 
 export default BrowseDoudous;

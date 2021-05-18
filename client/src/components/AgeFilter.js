@@ -1,19 +1,19 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const AgeFilter = (setDoudous) => {
+const AgeFilter = ({setDoudous}) => {
 
     function handleChange(event){
         let age = event.target.value;
         axios.get('/api/doudous/age/'+age).then((response) => {
-            console.log(response);
-            setDoudous(response);
-        }).catch((error) => {
-            console.log(error);
-            setDoudous([]);
-        });
-        
+            if (response.status === 200 && response != null) {
+                setDoudous(response.data);
+            }
+        }).catch((err) => {
+            if(err.response && err.response.status === 404){
+                setDoudous([]);
+            }
+        });      
     }
 
     return (

@@ -6,11 +6,11 @@ import Doudou from './Doudou';
 const Cart = ({cart, setCart, doudous, setDoudous}) => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const total = cart.length == 1 ? '1 doudou ' : cart.length > 1 ? (cart.length + " doudous ") : "No doudou ";
+    const total = cart.length === 1 ? '1 doudou ' : cart.length > 1 ? (cart.length + " doudous ") : "No doudou ";
 
     function removeFromCart(elt){
         let newCart = cart.filter(doudou => elt._id !== doudou._id);
-        if(newCart.length == 0){
+        if(newCart.length === 0){
             setIsOpen(false);
         }
         setCart(newCart);

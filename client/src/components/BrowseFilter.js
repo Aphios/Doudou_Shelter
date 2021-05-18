@@ -1,5 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+
 import AgeFilter from './AgeFilter';
 import SpeciesFilter from './SpeciesFilter';
 import SoftnessFilter from './SoftnessFilter';
@@ -11,9 +12,9 @@ const BrowseFilter = ({setDoudous}) => {
 
     const [activeFilter, setActiveFilter] = useState("no-filter");
 
-    const changeSelectOptionHandler = (event) => {
+    const handleChange = (event) => {
         setActiveFilter(event.target.value);
-      };
+    };
 
     let options = null;
 
@@ -32,6 +33,12 @@ const BrowseFilter = ({setDoudous}) => {
             break;
         case "no-filter":
             options = null;
+            axios.get('/api/doudous')
+            .then((response) => {
+                if (response.status === 200 && response != null) {
+                    setDoudous(response.data);
+                }
+            });
             break;
         default:
             options = null;
@@ -41,8 +48,8 @@ const BrowseFilter = ({setDoudous}) => {
     return (
         <div className="browse-filter">
             <p>Filter by : </p>
-            <select onChange={changeSelectOptionHandler}>
-                <option value="no-filter" selected>No filter</option>
+            <select onChange={handleChange} defaultValue="no-filter">
+                <option value="no-filter">No filter</option>
                 <option value="age">Age</option>
                 <option value="sex">Sex</option>
                 <option value="species">Species</option>
