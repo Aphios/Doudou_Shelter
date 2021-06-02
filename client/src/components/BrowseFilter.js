@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import AgeFilter from './AgeFilter';
@@ -10,40 +10,36 @@ import SexFilter from './SexFilter';
 
 const BrowseFilter = ({setDoudous}) => {
 
-    const [activeFilter, setActiveFilter] = useState("no-filter");
+    const [activeFilter, setActiveFilter] = useState(null);
 
     const handleChange = (event) => {
-        setActiveFilter(event.target.value);
+        switch (event.target.value) {
+            case "age":
+                setActiveFilter(<AgeFilter setDoudous={setDoudous}/>)
+                break;
+            case "sex":
+                setActiveFilter(<SexFilter setDoudous={setDoudous}/>)
+                break;
+            case "species":
+                setActiveFilter(<SpeciesFilter setDoudous={setDoudous}/>)
+                break;
+            case "softness":
+                setActiveFilter(<SoftnessFilter setDoudous={setDoudous}/>)
+                break;
+            case "no-filter":
+                setActiveFilter(null);
+                axios.get('/api/doudous')
+                .then((response) => {
+                    if (response.status === 200 && response != null) {
+                        setDoudous(response.data);
+                    }
+                });
+                break;
+            default:
+                setActiveFilter(null);
+                break;
+        }
     };
-
-    let options = null;
-
-    switch (activeFilter) {
-        case "age":
-            options = <AgeFilter setDoudous={setDoudous}/>
-            break;
-        case "sex":
-            options = <SexFilter setDoudous={setDoudous}/>
-            break;
-        case "species":
-            options = <SpeciesFilter setDoudous={setDoudous}/>
-            break;
-        case "softness":
-            options = <SoftnessFilter setDoudous={setDoudous}/>
-            break;
-        case "no-filter":
-            options = null;
-            axios.get('/api/doudous')
-            .then((response) => {
-                if (response.status === 200 && response != null) {
-                    setDoudous(response.data);
-                }
-            });
-            break;
-        default:
-            options = null;
-            break;
-    }
 
     return (
         <div className="browse-filter">
@@ -55,7 +51,7 @@ const BrowseFilter = ({setDoudous}) => {
                 <option value="species">Species</option>
                 <option value="softness">Softness </option>
             </select>
-            {options}
+            {activeFilter}
         </div>
     );
 };

@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div className="banner">
+        <div className="banner" data-testid="doudou-banner">
             <h1>The Doudou Shelter</h1>
             <div className="home-link">
                 <img src="./img/logo_home.png" alt="Logo Home" />

@@ -5,6 +5,7 @@ import Doudou from './Doudou.js'
 const Doudous = ({doudous, setDoudous, cart, setCart}) => {
 
     function addToCart(elt){
+        console.log(elt._id);
         let newDoudous = doudous.filter(doudou => elt._id !== doudou._id);
         setDoudous(newDoudous);
         if(cart.length > 0){
